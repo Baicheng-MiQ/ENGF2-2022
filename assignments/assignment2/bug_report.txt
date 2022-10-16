@@ -1,0 +1,67 @@
+Bug report of the bomber game
+
+1.
+Summary: Prompt text never shows up when necessary
+Description of what happens: 
+    When the player is supposed to be prompted to press a key, or given game status info, the prompt text never shows up.
+Description of what I think should happen:
+    The prompt text should show up when the player is supposed to be prompted to press a key, or given game status info.
+Instruction for how to reproduce:
+    Run the game, and play it. The prompt text never shows up.
+Cause of the bug:
+    The text is not filled with a color, so it is invisible.
+
+2.
+Summary: The buildings cannot be fully destroyed
+Description of what happens: 
+    When the player shoots the buildings, there is a small part of the building that cannot be destroyed at the end of the building.
+Description of what I think should happen:
+    The buildings should able to be fully destroyed when the player shoots many times.
+Instruction for how to reproduce:
+    Run the game, and shoot one building multiple times. The building cannot be fully destroyed.
+Cause of the bug:
+    The buildings are allowed to have a negative height, which is not possible in real life.
+
+3.
+Summary: If player shoots when plane of out of screen, a lag time occurs before the next shot.
+Description of what happens: 
+    When the player shoots when the plane is out of the screen, the player has to wait a few seconds before the next shot.
+Description of what I think should happen:
+    The player should be able to shoot immediately after the plane plays in the screen.
+Instruction for how to reproduce:
+    Run the game, and shoot when the plane is out of the screen. The player has to wait a few seconds before the next shot.
+Cause of the bug:
+    The player should't be able to shoot when the plane is out of the screen. Otherwise, the player has to wait a few seconds for the previous out-screen bomb to land before the next shot.
+
+4.
+Summary: The right most building is not possible to be destroyed.
+Description of what happens:
+    It is not very possible to destroy the right most building.
+Description of what I think should happen:
+    The right most building should be able to be destroyed.
+Instruction for how to reproduce:
+    Run the game, and shoot the right most building.
+Cause of the bug:
+    The right most building gives player very little time to shoot it, and hence should be removed.
+
+5.
+Summary: if a bomb doesn't hit the building, the player will no long able to shoot another bomb.
+Description of what happens:
+    If a bomb doesn't hit the building, the player will no long able to shoot another bomb.
+Description of what I think should happen:
+    The player should be able to shoot another bomb.
+Instruction for how to reproduce:
+    Run the game, and shoot a bomb that doesn't hit the building. The player will no long able to shoot another bomb.
+Cause of the bug:
+    The state of the bomb is not changed when a bomb doesn't hit the building.
+
+6.
+Summary: The game doesn't show success message when the player wins.
+Description of what happens:
+    The game doesn't show success message when the player wins.
+Description of what I think should happen:
+    The game should show success message when the player wins.
+Instruction for how to reproduce:
+    Run the game, and win the game. The game doesn't show success message.
+Cause of the bug:
+    The programme logic is not correct to detect the win condition.

@@ -28,14 +28,14 @@ def test_euclid_exc():
     finally:
         assert True     # Always execute finally.
 
-import pytest
-@pytest.mark.parametrize("test_inputs", 
-    [(-1, 10), (10, -5), (-4, -9)])
-def test_euclid_exc_raises(test_inputs):
-    ax, bx = test_inputs
-    with pytest.raises(Exception) as excinfo:
-        GCD(ax, bx)  
-    assert "Must be positive int." in str(excinfo.value)
+# import pytest
+# @pytest.mark.parametrize("test_inputs", 
+#     [(-1, 10), (10, -5), (-4, -9)])
+# def test_euclid_exc_raises(test_inputs):
+#     ax, bx = test_inputs
+#     with pytest.raises(Exception) as excinfo:
+#         GCD(ax, bx)  
+#     assert "Must be positive int." in str(excinfo.value)
 
 import sys
 if __name__ == "__main__":

@@ -279,9 +279,14 @@ def restart(canvas, plane_pos, building_heights,
     level = 1
     score = 0
     reset_plane_position(plane_pos)
+
+    for i in building_rects:
+        canvas.delete(i)
+
     building_width = SPACING * 0.8
     create_buildings(canvas, building_width, building_heights,
                      building_xpos, building_rects)
+
     won = False
     game_running = True
     return (score, level)
@@ -331,7 +336,7 @@ def checkspeed():
 
 ''' run the main loop of the game '''
 def run_game():
-    global seen_event, ev, rand, game_running, lastframe, framecount
+    global seen_event, ev, rand, game_running, lastframe, framecount, msg_text, msg_text2
     root = Tk();
     rand = Random()
     windowsystem = root.call('tk', 'windowingsystem')
@@ -341,6 +346,7 @@ def run_game():
     building_xpos = []
     building_rects = []
     canvas = init_display(root, plane_pos, bomb_pos, building_heights, building_xpos, building_rects)
+    msg_text = ""
     root.bind_all('<Key>', key)
     prog_running = True
     score = 0

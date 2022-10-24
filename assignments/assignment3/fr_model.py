@@ -114,7 +114,10 @@ class Frog():
         (self.x,self.y) = self.start_position
 
     ''' which log are we on, or None if we're not on a log '''
-    def on_log(self):
+    def on_log(self, logs):
+        for log in logs:
+            if log.y == self.y and (log.x-log.width)<self.x<log.x:
+                return log
         return self.log
 
     ''' we're on a log.  Move along with it. '''
@@ -262,10 +265,10 @@ class Model():
         # the left of the home) + GRID_SIZE/2 (to get the centre of the
         # grid square)
         x = (spacing + GRID_SIZE)//2
-        for i in range(0,6):
-            x = x + GRID_SIZE + spacing
+        for i in range(0,5):
             self.homes_x.append(x)
             self.homes_occupied.append(False)
+            x = x + GRID_SIZE + spacing
 
     def frog_is_home(self, home_num):
         assert(home_num >= 0 and home_num <= 4)
@@ -291,7 +294,7 @@ class Model():
         self.pause_start(1, "self.next_level()")
 
     def reset_homes(self):
-        for i in range(0,6):
+        for i in range(0,5):
             self.homes_occupied[i] = False
 
     def died(self):
@@ -316,6 +319,7 @@ class Model():
             exec(self.unpause_function)
             
     def new_life(self):
+        self.frog.reset_position()
         self.controller.update_lives(self.lives)
 
     def game_over(self):
@@ -327,6 +331,7 @@ class Model():
         self.level = 1
         self.score = 0
         self.reset_level()
+        self.game_running = True
         self.dont_update_speed = True
 
     def next_level(self):
@@ -359,7 +364,7 @@ class Model():
 
     def check_frog_crossing_river(self):
         # frog is crossing the river
-        on_log = self.frog.on_log()
+        on_log = self.frog.on_log(self.logs)
         if (not (on_log is None)) and (not on_log.contains(self.frog)):
             # frog was on a log, but has now left that log
             on_log = None
@@ -368,7 +373,7 @@ class Model():
             # check if it's now on any other log
             for log in self.logs:
                 if log.contains(self.frog):
-                    on_long = log
+                    on_log = log
                     break
         if on_log is None:
             # frog is not on a log - it must be in the water

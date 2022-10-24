@@ -1,0 +1,89 @@
+A bug report should be brief and to the point. It should include:
+• One sentence summary of the bug.
+• Description of what happens.
+• Description of what you think should happen.
+• Instructions for how to reproduce the bug.
+• Explanation of cause to fix the bug.
+
+1.
+    a) Summary:
+        Frog cannot jump to logs on river.
+    b) Description:
+        When the frog jumps to the logs on the river, it dies.
+    c) Expected behavior:
+        The frog should be able to jump to the logs on the river.
+    d) Steps to reproduce:
+        1. Start the game.
+        2. Press the up key to jump to river side.
+        3. Press the up key to jump to the logs.
+        4. The frog dies.
+    e) Cause:
+        The on_log method in the frog class is not working properly.
+        Missing determination logic of whether the frog is on the log.
+        The method, instead, returns None everytime.
+        Which causes the frog to die when it jumps to the logs even though it is on the log.
+        Also, the typo on line 371 in fr_model.py might cause detection of the frog's position on the log to fail.
+
+2.
+    a) Summary:
+        The frog cannot revive after dying.
+    b) Description:
+        When the frog dies, it cannot revive. The game is over even there are still lives left.
+    c) Expected behavior:
+        The frog should be able to revive after dying.
+    d) Steps to reproduce:
+        1. Start the game.
+        2. Kill the frog.
+        3. The game is over.
+    e) Cause:
+        The new_life method in Model class is not working properly.
+        It does not reset the frog's position to the starting position.
+        Which cause the frog to die again when it is revived.
+
+3.
+    a) Summary:
+        The frog cannot go to the first home.
+    b) Description:
+        When the frog goes to the first home, it dies.
+    c) Expected behavior:
+        The frog should be able to go to the first home.
+    d) Steps to reproduce:
+        1. Start the game.
+        2. Press the up key to jump to the first home.
+        3. The frog dies.
+    e) Cause:
+        The create_home method in Model class is not working properly.
+        The methods does not append the first home to the homes list.
+        Which cause the frog to die when it goes to the first home.
+
+4.
+    a) Summary:
+        The game cannot restart after over.
+    b) Description:
+        When the game is over, by pressing R key, the game cannot restart.
+        Instead, the game enters a pause state.
+    c) Expected behavior:
+        The game should be able to restart after over.
+    d) Steps to reproduce:
+        1. Start the game.
+        2. Kill the frog.
+        3. Press R key.
+        4. The game enters a pause state.
+    e) Cause:
+        The restart method in Model class is not working properly.
+        The method does not set the game state to running.
+        Which cause the game to enter a pause state when it is restarted.
+
+5.
+    a) Summary:
+        The time cannot be fully displayed.
+    b) Description:
+        The time bar is too long to be displayed on the canvas.
+    c) Expected behavior:
+        The time bar should be able to be displayed on the canvas.
+    d) Steps to reproduce:
+        1. Start the game.
+        2. The time bar is not fully displayed.
+    e) Cause:
+        The time bar is too long to be displayed on the canvas.
+        The time bar should be shortened.

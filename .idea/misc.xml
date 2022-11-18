@@ -2,6 +2,7 @@
 <project version="4">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (uclengf2)" project-jdk-type="Python SDK" />
 =======
   <component name="ProjectRootManager" version="2" project-jdk-name="Unknown" project-jdk-type="Python SDK" />
@@ -9,4 +10,7 @@
 =======
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (uclengf2)" project-jdk-type="Python SDK" />
 >>>>>>> 521a995 (Added bomber homework)
+=======
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (uclengf2)" project-jdk-type="Python SDK" />
+>>>>>>> 65ddd24dfdcd211acbacc84c3fdb99c10988d0c5
 </project>

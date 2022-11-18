@@ -4,6 +4,7 @@
     <content url="file://$MODULE_DIR$" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <orderEntry type="jdk" jdkName="Python 3.10 (uclengf2)" jdkType="Python SDK" />
 =======
     <orderEntry type="inheritedJdk" />
@@ -11,6 +12,9 @@
 =======
     <orderEntry type="jdk" jdkName="Python 3.10 (uclengf2)" jdkType="Python SDK" />
 >>>>>>> 521a995 (Added bomber homework)
+=======
+    <orderEntry type="jdk" jdkName="Python 3.10 (uclengf2)" jdkType="Python SDK" />
+>>>>>>> 65ddd24dfdcd211acbacc84c3fdb99c10988d0c5
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">
